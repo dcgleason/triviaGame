@@ -9,21 +9,38 @@ let trivia = {
     thirdAnswer: ['Venus & Mars', 'Mercury & Venus', 'Uranus & Neptune', 1]
 };
 
+// let nasaData;
 //
 
-const API_KEY = "0ZdLYxQmH4TXCJDjeyOaOTIEkheeEaLdSGDaRxjs"
+const API_KEY = ""
 const nasaURL = "https://api.nasa.gov/EPIC/api/natural/images?api_key="
 
-function backgroundImage(){
- let jpeg = ".jpg"
+// function backgroundImage(){
+//  let jpeg = ".jpg"
+//  let randomNum = Math.floor(Math.random()*12);
  
-fetch(nasaURL+API_KEY)
- .then(response => response.json())
- .then(data => 
-    console.log(data)
-    // document.body.style.backgroundImage = `url('https://epic.gsfc.nasa.gov/archive/natural/2019/6/27/png/${data[0].image}.png')`
-    )}
-backgroundImage()
+// fetch(nasaURL+API_KEY)
+//  .then(response => response.json())
+//  .then(data => 
+//     // console.log(data)
+//     //nasaData = data
+//     // backgraoundImagereset(nasaData)
+//     // let year = data[randomNum].date.split(" ")[0].split("-")[0]
+//     // let month = data[randomNum].date.split(" ")[0].split("-")[1]
+//     // let day = data[randomNum].date.split(" ")[0].split("-")[2]
+//     document.body.style.backgroundImage = `url('https://epic.gsfc.nasa.gov/archive/natural/${data[randomNum].date.split(" ")[0].split("-")[0]}/${data[randomNum].date.split(" ")[0].split("-")[1]}/${data[randomNum].date.split(" ")[0].split("-")[2]}/png/${data[0].image}.png?api_key=${API_KEY}')`
+//     )}
+//     backgroundImage()
+    
+    
+    //randomizer: to get a random number
+    
+    // backgroundImageReset(data)
+    // data[random numbeer]
+    // data[randomnumber].date = data.date.split('-')
+    // => ['2019', '06', '27', '01:09:09']
+    //
+    // document.body.style.backgroundImage = `url('https://epic.gsfc.nasa.gov/archive/natural/${data[random].date[0]}/${data[random].date[1]}/27/png/${data[0].image}.png')`
 
 // display question and answers to page
 
