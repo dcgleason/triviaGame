@@ -1,23 +1,37 @@
 
-body{
-  background: blue;
+html {
+  background-image: url("/img/epic_1b_20190627011358.png");
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 }
 
-.wrapper {
-    width: 450px;
-    margin: auto;
-    height: 100%;
-    padding-top: 0px;
-  }
 
 #quiz{
- background-color: grey;
- padding-bottom: 60px;
-  width: 100%;
+  background-color: grey;
+  padding-bottom: 60px;
+  width: 450px;
+  margin: 0 auto;
+  height: 100%;
+  padding-top: 0px;
   border-radius: 2%;
   color: #fff;
   text-align: center;
   box-shadow: 5px 5px 15px 2px rgba(0,0,0,0.39);
+}
+
+#progressBar{
+  width: 20rem;
+  height: 4rem;
+  border: 0.3rem solid #AA3939;
+  margin-left: 12.5rem;
+}
+
+#progressBarFull{
+  height: 3.4rem;
+  background-color: #AA3939;
+  width: 0%;
 }
 
 #quiz > h1 {
@@ -58,11 +72,5 @@ button{
     color: #550000;
   }
 
-.color-primary-0 { color: #AA3939 }	/* Main Primary color */
-.color-primary-1 { color: #FFAAAA }
-.color-primary-2 { color: #D46A6A }
-.color-primary-3 { color: #801515 }
-.color-primary-4 { color: #550000 }
 
-
-/*stack up blocks on the edges even time you get a question right 
+/* make responsive
