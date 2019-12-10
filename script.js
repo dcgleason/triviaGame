@@ -3,14 +3,30 @@
 let trivia = {
     firstQuestion: 'What is the largest planet in our solar system?',
     firstAnswer: ['Saturn', 'Jupitor', 'Neptune', 1],
-    secondQuestion: 'Every action has an equal and opposite reaction. Who proposed this law?',
-    secondAnswer: ['Newton', 'Einstien' , 'Planck', 0],
-    thirdQuestion: 'Who is known as the father of mathematics?',
-    thirdAnswer: ['Eintein', 'Archimedes', 'Newton', 1]
+    secondQuestion: 'The planets make up what percentage of the mass in our solar system?',
+    secondAnswer: ['1.35%', '0.135%' , '13.5%', 0],
+    thirdQuestion: 'What are the only two planets in our solar system without moons?',
+    thirdAnswer: ['Venus & Mars', 'Mercury & Venus', 'Uranus & Neptune', 1]
 };
 
+//
+
+const API_KEY = "0ZdLYxQmH4TXCJDjeyOaOTIEkheeEaLdSGDaRxjs"
+const nasaURL = "https://api.nasa.gov/EPIC/api/natural/images?api_key="
+
+function backgroundImage(){
+ let jpeg = ".jpg"
+ 
+    fetch(nasaURL+API_KEY)
+    .then(response => response.json())
+    .then(data => 
+    document.body.style.backgroundImage = `url('${data[0].image+jpeg}')`)
+    }
+
+backgroundImage()
 
 // display question and answers to page
+
 
 let question = document.querySelector('#question')
 let answerOne = document.querySelector("#answer-one")
@@ -154,3 +170,8 @@ streak.innerHTML="Your total score is " + total
 
 //more things to do...
 //high score, cooler css (button animation), more questions, fix the winning streak and total score functionality, figure out modals, and maybe try to do more than one page? 
+
+//questions
+// why does the backgruond image turn blue only for a second? Page reloading? 
+// numberRight count insn't working
+// for loop within a fetch call...
