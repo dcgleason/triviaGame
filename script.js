@@ -20,8 +20,8 @@ function backgroundImage(){
 fetch(nasaURL+API_KEY)
  .then(response => response.json())
  .then(data => 
-    // console.log(data[1].image)
-    document.body.style.backgroundImage = `url('https://epic.gsfc.nasa.gov/archive/natural/2019/6/27/png/${data[0].image}.png')`
+    console.log(data)
+    // document.body.style.backgroundImage = `url('https://epic.gsfc.nasa.gov/archive/natural/2019/6/27/png/${data[0].image}.png')`
     )}
 backgroundImage()
 
@@ -67,7 +67,6 @@ function setScreen(){
     progressBarFull.style.width = `${(total/totalQuestions) * 100}%`
     console.log(total/totalQuestions)
     secondTurn();
-    // input modal and then put in a new question / answer
   }
   function firstTurnAnswer3() {
     result.innerHTML = "That was incorrect";
@@ -139,7 +138,7 @@ function setScreen(){
     answerTwoDiv.addEventListener("click", firstTurnAnswer2);
     answerThreeDiv.addEventListener("click", firstTurnAnswer3);
   }
-  // function for second quesiotn
+  // function for second question
   function secondTurn() {
     questionDiv.innerHTML = trivia.secondQuestion;
     answerOneDiv.innerHTML = trivia.secondAnswer[0];
@@ -152,7 +151,7 @@ function setScreen(){
     answerTwoDiv.addEventListener("click", secondTurnAnswer2);
     answerThreeDiv.addEventListener("click", secondTurnAnswer3);
   }
-  //function for thrid questionDiv
+  //function for thrid question
   function thirdTurn() {
     questionDiv.innerHTML = trivia.thirdQuestion;
     answerOneDiv.innerHTML = trivia.thirdAnswer[0];
