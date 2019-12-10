@@ -44,7 +44,7 @@ setScreen()
 
 function setScreen(){
     progressBarFull.style.width = `${(total/totalQuestions) * 100}em`
-    fraction.innerHTML = "Questions:" + total + "/" + totalQuestions
+    fraction.innerHTML = "Questions: " + total + "/" + totalQuestions
 }
 
   //addeventlistener to buttons(if == correct, model pops up)
@@ -64,7 +64,7 @@ function setScreen(){
     console.log(total);
     streak.innerHTML = "Your winning streak is " + numRightInARow;
     fraction.innerHTML = "Questions: " + total + "/" + totalQuestions
-    progressBarFull.style.width = `${(total/totalQuestions) * 100}px`
+    progressBarFull.style.width = `${(total/totalQuestions) * 100}%`
     console.log(total/totalQuestions)
     secondTurn();
     // input modal and then put in a new question / answer
@@ -84,7 +84,7 @@ function setScreen(){
     console.log(total);
     streak.innerHTML = "Your winning streak is " + numRightInARow;
     fraction.innerHTML = "Questions: " + total + "/" + totalQuestions
-    progressBarFull.style.width = `${(total/totalQuestions) * 100}px`
+    progressBarFull.style.width = `${(total/totalQuestions) * 100}%`
     console.log(total/totalQuestions)
     thirdTurn();
   }
@@ -118,7 +118,7 @@ function setScreen(){
     numRightInARow++;
     streak.innerHTML = "Your winning streak is " + numRightInARow;
     fraction.innerHTML = "Questions: " + total + "/" + totalQuestions
-    progressBarFull.style.width = `${(total/totalQuestions) * 100}px`
+    progressBarFull.style.width = `${(total/totalQuestions) * 100}%`
     console.log(total/totalQuestions)
     gameOver();
   }

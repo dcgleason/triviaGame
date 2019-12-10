@@ -31,7 +31,7 @@ html {
 #progressBarFull{
   height: 3.4rem;
   background-color: #AA3939;
-  width: 0%;
+  width: 100%;
 }
 
 #quiz > h1 {
@@ -64,7 +64,7 @@ button{
   text-align: center;
   text-decoration: none;
   display: inline-flex;
-  font-size: 12px
+  font-size: 12px;
 }
 
 .answers button:hover {
