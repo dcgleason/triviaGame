@@ -18,9 +18,8 @@ let answerTwo= document.querySelector("#answer-two")
 let answerThree = document.querySelector("#answer-three")
 let result = document.querySelector("#result")
 let streak = document.querySelector("#winning-streak")
-let turn = 0
-let numInARow = 0
-let numberRight = 0
+let numRightInARow = 0
+let total = 0
 
 
 
@@ -38,15 +37,15 @@ answerThree.innerHTML = trivia.firstAnswer[2]
 
 answerOne.addEventListener('click', function(){
     result.innerHTML= "That was incorrect"
-    numInARow=0
-    streak.innerHTML = "Your winning streak is " + numInARow
+    numRightInARow=0
+    streak.innerHTML = "Your winning streak is " + numRightInARow
     secondTurn()
 })
 answerTwo.addEventListener('click', function(){
     result.innerHTML= "That was correct"
-    numInARow++
-    numberRight++
-    streak.innerHTML = "Your winning streak is " + numInARow
+    numRightInARow++
+    total+=1
+    streak.innerHTML = "Your winning streak is " + numRightInARow
     secondTurn();
 
 
@@ -54,8 +53,8 @@ answerTwo.addEventListener('click', function(){
 })
 answerThree.addEventListener('click', function(){
     result.innerHTML= "That was incorrect"
-    numInARow=0
-    streak.innerHTML = "Your winning streak is " + numInARow
+    numRightInARow=0
+    streak.innerHTML = "Your winning streak is " + numRightInARow
     secondTurn()
 })
 }
@@ -71,24 +70,26 @@ answerTwo.innerHTML = trivia.secondAnswer[1]
 answerThree.innerHTML = trivia.secondAnswer[2]
 
     answerOne.addEventListener('click', function(){
-        result.innerHTML= "That was corrent"
-        numInARow++
-        numberRight++
-        streak.innerHTML = "Your winning streak is " + numInARow
+        result.innerHTML= "That was correct"
+        numRightInARow++
+        console.log(total)
+        total+=1
+        console.log(total)
+        streak.innerHTML = "Your winning streak is " + numRightInARow
         thirdTurn()
     })
     answerTwo.addEventListener('click', function(){
         result.innerHTML= "That was incorrect"
-        numberRight = 0 
-        streak.innerHTML = "Your winning streak is " + numberRight
+        numRightinARow=0 
+        streak.innerHTML = "Your winning streak is " + numRightInARow
         thirdTurn()
  
     
     })
     answerThree.addEventListener('click', function(){
         result.innerHTML= "That was incorrect"
-        numberRight=0
-        streak.innerHTML = "Your winning streak is " + numInARow
+        numRightinARow=0
+        streak.innerHTML = "Your winning streak is " + numRightInARow
         thirdTurn()
     })
     
@@ -103,23 +104,27 @@ answerThree.innerHTML = trivia.thirdAnswer[2]
 
     answerOne.addEventListener('click', function(){
         result.innerHTML= "That was incorrect"
-        numberRight = 0
-        streak.innerHTML = "Your winning streak is " + numInARow
+        numRightinARow = 0
+        console.log(total)
+        streak.innerHTML = "Your winning streak is " + numRightInARow
         gameOver()
     })
     answerTwo.addEventListener('click', function(){
         result.innerHTML= "That was correct"
-        numberRight++
-        numInARow++
-        streak.innerHTML = "Your winning streak is " + numInARow
+        console.log(total)
+        total+=1
+        console.log(total)
+        numRightInARow++
+        streak.innerHTML = "Your winning streak is " + numRightInARow
         gameOver()
 
  
     })
     answerThree.addEventListener('click', function(){
         result.innerHTML= "That was incorrect"
-        numberRight=0
-        streak.innerHTML = "Your winning streak is " + numInARow
+        numRightInARow=0
+        console.log(total)
+        streak.innerHTML = "Your winning streak is " + numRightInARow
         gameOver()
     })
 }
@@ -132,7 +137,7 @@ answerOne.innerHTML = ""
 answerTwo.innerHTML = ""
 result.innerHTML = ""
 answerThree.innerHTML = ""
-streak.innerHTML="Your score is " + numberRight
+streak.innerHTML="Your total score is " + total
 
 }
 
@@ -146,3 +151,6 @@ streak.innerHTML="Your score is " + numberRight
 //function is called when user clicks on new game button
 // function is called when
 //include high score!
+
+//more things to do...
+//high score, cooler css (button animation), more questions, fix the winning streak and total score functionality, figure out modals, and maybe try to do more than one page? 
