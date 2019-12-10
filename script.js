@@ -188,6 +188,10 @@ function setScreen(){
     answerTwoDiv.innerHTML = "";
     result.innerHTML = "";
     answerThreeDiv.innerHTML = "";
+    answerOneDiv.parentNode.removeChild(answerOneDiv);
+    answerTwoDiv.parentNode.removeChild(answerTwoDiv);
+    answerThreeDiv.parentNode.removeChild(answerThreeDiv);
+
     streak.innerHTML = "Your total score is " + total;
   }
 
