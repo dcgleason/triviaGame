@@ -9,7 +9,7 @@ let trivia = {
     thirdAnswer: ['Venus & Mars', 'Mercury & Venus', 'Uranus & Neptune', 1]
 };
 
-// let nasaData;
+// code to pull background image of earth from nasa api
 //
 
 const API_KEY = ""
@@ -32,15 +32,6 @@ const nasaURL = "https://api.nasa.gov/EPIC/api/natural/images?api_key="
 //     )}
 //     backgroundImage()
     
-    
-    //randomizer: to get a random number
-    
-    // backgroundImageReset(data)
-    // data[random numbeer]
-    // data[randomnumber].date = data.date.split('-')
-    // => ['2019', '06', '27', '01:09:09']
-    //
-    // document.body.style.backgroundImage = `url('https://epic.gsfc.nasa.gov/archive/natural/${data[random].date[0]}/${data[random].date[1]}/27/png/${data[0].image}.png')`
 
 // display question and answers to page
 
@@ -62,9 +53,11 @@ let fraction = document.querySelector(".fraction")
 setScreen()
 
 function setScreen(){
+    document.getElementById("title").innerHTML = "Astronomy Trivia Game"
     progressBarFull.style.width = `${(total/totalQuestions) * 100}em`
     fraction.innerHTML = "Questions: " + total + "/" + totalQuestions
     topScore.innerHTML = "Top Score: " + topArray[0]
+
     firstTurn();
 }
 
@@ -97,7 +90,9 @@ function setScreen(){
     streak.innerHTML = "Your winning streak is " + numRightInARow;
     fraction.innerHTML = "Questions: " + total + "/" + totalQuestions
     topScore.innerHTML = "Top Score: " + topArray[0]
+    console.trace()
     secondTurn();
+    console.trace()
   }
   function secondTurnAnswer1() {
     result.innerHTML = "That was correct";
@@ -126,6 +121,7 @@ function setScreen(){
     streak.innerHTML = "Your winning streak is " + numRightInARow;
     fraction.innerHTML = "Questions: " + total + "/" + totalQuestions
     topScore.innerHTML = "Top Score: " + topArray[0]
+    console.trace()
     thirdTurn();
   }
   function thirdTurnAnswer1() {
@@ -164,11 +160,6 @@ function sortNum (a,b){
     return b-a
 }
 
-function clearScrean(){
-
-}
-
-
   function firstTurn() {
     questionDiv.innerHTML = trivia.firstQuestion;
     answerOneDiv.innerHTML = trivia.firstAnswer[0];
@@ -191,7 +182,7 @@ function clearScrean(){
     answerTwoDiv.addEventListener("click", secondTurnAnswer2);
     answerThreeDiv.addEventListener("click", secondTurnAnswer3);
   }
-  //function for thrid question
+  //function for third question
   function thirdTurn() {
     questionDiv.innerHTML = trivia.thirdQuestion;
     answerOneDiv.innerHTML = trivia.thirdAnswer[0];
@@ -211,6 +202,12 @@ function clearScrean(){
     answerTwoDiv.innerHTML = "";
     answerThreeDiv.innerHTML = "";
     result.innerHTML = "";
+
+// remove event listeners from third turn
+
+    answerOneDiv.removeEventListener("click", thirdTurnAnswer1);
+    answerTwoDiv.removeEventListener("click", thirdTurnAnswer2);
+    answerThreeDiv.removeEventListener("click", thirdTurnAnswer3)
     
 // pushes total into array sorts that array, largest number at indexes 0
     topArray.push(total)
