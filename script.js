@@ -51,8 +51,10 @@ let answerTwoDiv= document.querySelector("#answer-two")
 let answerThreeDiv = document.querySelector("#answer-three")
 let result = document.querySelector("#result")
 let streak = document.querySelector("#winning-streak")
+let topScore = document.querySelector("#topScore")
 let numRightInARow = 0
 let total = 0
+let topArray = [0]
 let progressBarFull = document.querySelector("#progressBarFull")
 const totalQuestions = 3
 let fraction = document.querySelector(".fraction")
@@ -62,15 +64,18 @@ setScreen()
 function setScreen(){
     progressBarFull.style.width = `${(total/totalQuestions) * 100}em`
     fraction.innerHTML = "Questions: " + total + "/" + totalQuestions
+    topScore.innerHTML = "Top Score: " + topArray[0]
+    firstTurn();
 }
 
   //addeventlistener to buttons(if == correct, model pops up)
-  firstTurn();
+
   function firstTurnAnswer1() {
     result.innerHTML = "That was incorrect";
     numRightInARow = 0;
     streak.innerHTML = "Your winning streak is " + numRightInARow;
     fraction.innerHTML = "Questions: " + total + "/" + totalQuestions
+    topScore.innerHTML = "Top Score: " +  topArray[0]
     secondTurn();
   }
   function firstTurnAnswer2() {
@@ -82,6 +87,7 @@ function setScreen(){
     streak.innerHTML = "Your winning streak is " + numRightInARow;
     fraction.innerHTML = "Questions: " + total + "/" + totalQuestions
     progressBarFull.style.width = `${(total/totalQuestions) * 100}%`
+    topScore.innerHTML = "Top Score: " + topArray[0]
     console.log(total/totalQuestions)
     secondTurn();
   }
@@ -90,6 +96,7 @@ function setScreen(){
     numRightInARow = 0;
     streak.innerHTML = "Your winning streak is " + numRightInARow;
     fraction.innerHTML = "Questions: " + total + "/" + totalQuestions
+    topScore.innerHTML = "Top Score: " + topArray[0]
     secondTurn();
   }
   function secondTurnAnswer1() {
@@ -101,6 +108,7 @@ function setScreen(){
     streak.innerHTML = "Your winning streak is " + numRightInARow;
     fraction.innerHTML = "Questions: " + total + "/" + totalQuestions
     progressBarFull.style.width = `${(total/totalQuestions) * 100}%`
+    topScore.innerHTML = "Top Score: " + topArray[0]
     console.log(total/totalQuestions)
     thirdTurn();
   }
@@ -109,6 +117,7 @@ function setScreen(){
     numRightinARow = 0;
     streak.innerHTML = "Your winning streak is " + numRightInARow;
     fraction.innerHTML = "Questions: " + total + "/" + totalQuestions
+    topScore.innerHTML = "Top Score: " + topArray[0]
     thirdTurn();
   }
   function secondTurnAnswer3() {
@@ -116,6 +125,7 @@ function setScreen(){
     numRightinARow = 0;
     streak.innerHTML = "Your winning streak is " + numRightInARow;
     fraction.innerHTML = "Questions: " + total + "/" + totalQuestions
+    topScore.innerHTML = "Top Score: " + topArray[0]
     thirdTurn();
   }
   function thirdTurnAnswer1() {
@@ -124,6 +134,7 @@ function setScreen(){
     console.log(total);
     streak.innerHTML = "Your winning streak is " + numRightInARow;
     fraction.innerHTML = "Questions: " + total + "/" + totalQuestions
+    topScore.innerHTML = "Top Score: " + topArray[0]
     gameOver();
   }
   function thirdTurnAnswer2() {
@@ -135,6 +146,7 @@ function setScreen(){
     streak.innerHTML = "Your winning streak is " + numRightInARow;
     fraction.innerHTML = "Questions: " + total + "/" + totalQuestions
     progressBarFull.style.width = `${(total/totalQuestions) * 100}%`
+    topScore.innerHTML = "Top Score: " + topArray[0]
     console.log(total/totalQuestions)
     gameOver();
   }
@@ -144,8 +156,19 @@ function setScreen(){
     console.log(total);
     streak.innerHTML = "Your winning streak is " + numRightInARow;
     fraction.innerHTML = "Questions: " + total + "/" + totalQuestions
+    topScore.innerHTML = "Top Score: " + topArray[0]
     gameOver();
   }
+   
+function sortNum (a,b){
+    return b-a
+}
+
+function clearScrean(){
+
+}
+
+
   function firstTurn() {
     questionDiv.innerHTML = trivia.firstQuestion;
     answerOneDiv.innerHTML = trivia.firstAnswer[0];
@@ -186,14 +209,48 @@ function setScreen(){
     questionDiv.innerHTML = "";
     answerOneDiv.innerHTML = "";
     answerTwoDiv.innerHTML = "";
-    result.innerHTML = "";
     answerThreeDiv.innerHTML = "";
-    answerOneDiv.parentNode.removeChild(answerOneDiv);
-    answerTwoDiv.parentNode.removeChild(answerTwoDiv);
-    answerThreeDiv.parentNode.removeChild(answerThreeDiv);
+    result.innerHTML = "";
+    
+// pushes total into array sorts that array, largest number at indexes 0
+    topArray.push(total)
+    topArray.sort(sortNum)
+    console.log(topArray)
+    topScore.innerHTML = "Top Score: " + topArray[0]
+    total = 0
+
+// shows playagain button and then removes after click by removing and adding a class
+    let playAgain = document.querySelector("#playAgain")
+    playAgain.classList.remove('hidden')
+    playAgain.addEventListener('click', function(e){
+        total = 0
+        numRightInARow = 0
+        answerOneDiv.classList.remove("hidden")
+        answerTwoDiv.classList.remove("hidden")
+        answerThreeDiv.classList.remove("hidden")
+        e.target.classList.add("hidden")
+        setScreen()
+    })
+  
+    
+    answerOneDiv.classList.add("hidden")
+    answerTwoDiv.classList.add("hidden")
+    answerThreeDiv.classList.add("hidden")
+    // answerOneDiv.parentNode.removeChild(answerOneDiv);
+    // answerTwoDiv.parentNode.removeChild(answerTwoDiv);
+    // answerThreeDiv.parentNode.removeChild(answerThreeDiv);
 
     streak.innerHTML = "Your total score is " + total;
   }
+
+
+
+
+ 
+
+  // loop the sco
+
+  // arrange top score from high to low, keeping only the top five. 
 
    
 //when get the right answer, add modal and then go to next questionDiv

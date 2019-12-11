@@ -73,6 +73,11 @@ button{
   font-size: 12px;
 }
 
+.hidden{
+  visibility: hidden;
+}
+
+
 .answers button:hover {
     cursor: pointer;
     color: #550000;
