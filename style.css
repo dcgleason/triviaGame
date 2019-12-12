@@ -19,14 +19,14 @@ body{
 }
 
 #quiz{
-  background-color: grey;
+  background-color: #DEDEDEDE;
   padding-bottom: 130px;
   width: 450px;
   margin: 0 auto;
   height: 100%;
   padding-top: 0px;
   border-radius: 2%;
-  color: #fff;
+  color: #555555;
   text-align: center;
   box-shadow: 5px 5px 15px 2px rgba(0,0,0,0.39);
 }
@@ -35,6 +35,7 @@ body{
   height: 200px;
   line-height: 150px;
   text-align: center;
+  padding: 0px;
   /* border: 2px dashed #f69c55; */
 }
 .answers, .results {
