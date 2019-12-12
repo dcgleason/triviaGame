@@ -59,7 +59,7 @@ setScreen()
 function setScreen(){
     document.getElementById("title").innerHTML = "Astronomy Trivia Game"
     progressBarFull.style.width = `${(total/totalQuestions) * 100}em`
-    fraction.innerHTML = "Questions: " + total + "/" + totalQuestions
+    fraction.innerHTML = "Questions Right: " + total + "/" + totalQuestions
     topScore.innerHTML = "Top Score: " + topArray[0]
 
     firstTurn();
@@ -71,7 +71,7 @@ function setScreen(){
     result.innerHTML = "That was incorrect";
     numRightInARow = 0;
     streak.innerHTML = "Your winning streak is " + numRightInARow;
-    fraction.innerHTML = "Questions: " + total + "/" + totalQuestions
+    fraction.innerHTML = "Questions Right: " + total + "/" + totalQuestions
     topScore.innerHTML = "Top Score: " +  topArray[0]
     secondTurn();
   }
@@ -82,7 +82,7 @@ function setScreen(){
     total += 1;
     console.log(total);
     streak.innerHTML = "Your winning streak is " + numRightInARow;
-    fraction.innerHTML = "Questions: " + total + "/" + totalQuestions
+    fraction.innerHTML = "Questions Right: " + total + "/" + totalQuestions
     progressBarFull.style.width = `${(total/totalQuestions) * 100}%`
     topScore.innerHTML = "Top Score: " + topArray[0]
     console.log(total/totalQuestions)
@@ -92,7 +92,7 @@ function setScreen(){
     result.innerHTML = "That was incorrect";
     numRightInARow = 0;
     streak.innerHTML = "Your winning streak is " + numRightInARow;
-    fraction.innerHTML = "Questions: " + total + "/" + totalQuestions
+    fraction.innerHTML = "Questions Right: " + total + "/" + totalQuestions
     topScore.innerHTML = "Top Score: " + topArray[0]
     console.trace()
     secondTurn();
@@ -105,7 +105,7 @@ function setScreen(){
     total += 1;
     console.log(total);
     streak.innerHTML = "Your winning streak is " + numRightInARow;
-    fraction.innerHTML = "Questions: " + total + "/" + totalQuestions
+    fraction.innerHTML = "Questions Right: " + total + "/" + totalQuestions
     progressBarFull.style.width = `${(total/totalQuestions) * 100}%`
     topScore.innerHTML = "Top Score: " + topArray[0]
     console.log(total/totalQuestions)
@@ -115,7 +115,7 @@ function setScreen(){
     result.innerHTML = "That was incorrect";
     numRightinARow = 0;
     streak.innerHTML = "Your winning streak is " + numRightInARow;
-    fraction.innerHTML = "Questions: " + total + "/" + totalQuestions
+    fraction.innerHTML = "Questions Right: " + total + "/" + totalQuestions
     topScore.innerHTML = "Top Score: " + topArray[0]
     thirdTurn();
   }
@@ -123,7 +123,7 @@ function setScreen(){
     result.innerHTML = "That was incorrect";
     numRightinARow = 0;
     streak.innerHTML = "Your winning streak is " + numRightInARow;
-    fraction.innerHTML = "Questions: " + total + "/" + totalQuestions
+    fraction.innerHTML = "Questions Right: " + total + "/" + totalQuestions
     topScore.innerHTML = "Top Score: " + topArray[0]
     console.trace()
     thirdTurn();
@@ -133,7 +133,7 @@ function setScreen(){
     numRightinARow = 0;
     console.log(total);
     streak.innerHTML = "Your winning streak is " + numRightInARow;
-    fraction.innerHTML = "Questions: " + total + "/" + totalQuestions
+    fraction.innerHTML = "Questions Right: " + total + "/" + totalQuestions
     topScore.innerHTML = "Top Score: " + topArray[0]
     fourthTurn();
   }
@@ -144,7 +144,7 @@ function setScreen(){
     console.log(total);
     numRightInARow++;
     streak.innerHTML = "Your winning streak is " + numRightInARow;
-    fraction.innerHTML = "Questions: " + total + "/" + totalQuestions
+    fraction.innerHTML = "Questions Right: " + total + "/" + totalQuestions
     progressBarFull.style.width = `${(total/totalQuestions) * 100}%`
     topScore.innerHTML = "Top Score: " + topArray[0]
     console.log(total/totalQuestions)
@@ -154,7 +154,7 @@ function setScreen(){
     result.innerHTML = "That was incorrect";
     numRightInARow = 0;
     streak.innerHTML = "Your winning streak is " + numRightInARow;
-    fraction.innerHTML = "Questions: " + total + "/" + totalQuestions
+    fraction.innerHTML = "Questions Right: " + total + "/" + totalQuestions
     topScore.innerHTML = "Top Score: " + topArray[0]
     fourthTurn();
   }
@@ -163,7 +163,7 @@ function setScreen(){
     result.innerHTML = "That was incorrect";
     numRightInARow = 0;
     streak.innerHTML = "Your winning streak is " + numRightInARow;
-    fraction.innerHTML = "Questions: " + total + "/" + totalQuestions
+    fraction.innerHTML = "Questions Right: " + total + "/" + totalQuestions
     topScore.innerHTML = "Top Score: " + topArray[0]
     fifthTurn();  
   }
@@ -172,7 +172,7 @@ function setScreen(){
     numRightInARow+=1
     total ++
     streak.innerHTML = "Your winning streak is " + numRightInARow;
-    fraction.innerHTML = "Questions: " + total + "/" + totalQuestions
+    fraction.innerHTML = "Questions Right: " + total + "/" + totalQuestions
     progressBarFull.style.width = `${(total/totalQuestions) * 100}%`
     topScore.innerHTML = "Top Score: " + topArray[0]
     fifthTurn();  
@@ -181,7 +181,7 @@ function setScreen(){
     result.innerHTML = "That was incorrect";
     numRightInARow = 0;
     streak.innerHTML = "Your winning streak is " + numRightInARow;
-    fraction.innerHTML = "Questions: " + total + "/" + totalQuestions
+    fraction.innerHTML = "Questions Right: " + total + "/" + totalQuestions
     topScore.innerHTML = "Top Score: " + topArray[0]
     fifthTurn();  
   }
@@ -190,7 +190,7 @@ function setScreen(){
     result.innerHTML = "That was incorrect";
     numRightInARow = 0;
     streak.innerHTML = "Your winning streak is " + numRightInARow;
-    fraction.innerHTML = "Questions: " + total + "/" + totalQuestions
+    fraction.innerHTML = "Questions Right: " + total + "/" + totalQuestions
     topScore.innerHTML = "Top Score: " + topArray[0]
     gameOver();  
   }
@@ -199,7 +199,7 @@ function setScreen(){
     numRightInARow ++
     total+=1
     streak.innerHTML = "Your winning streak is " + numRightInARow;
-    fraction.innerHTML = "Questions: " + total + "/" + totalQuestions
+    fraction.innerHTML = "Questions Right: " + total + "/" + totalQuestions
     progressBarFull.style.width = `${(total/totalQuestions) * 100}%`
     topScore.innerHTML = "Top Score: " + topArray[0]
     gameOver();  
@@ -208,7 +208,7 @@ function setScreen(){
     result.innerHTML = "That was incorrect";
     numRightInARow = 0;
     streak.innerHTML = "Your winning streak is " + numRightInARow;
-    fraction.innerHTML = "Questions: " + total + "/" + totalQuestions
+    fraction.innerHTML = "Questions Right: " + total + "/" + totalQuestions
     topScore.innerHTML = "Top Score: " + topArray[0]
     gameOver();  
   }
