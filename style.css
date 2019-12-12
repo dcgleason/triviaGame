@@ -1,6 +1,6 @@
 
 html {
-  background-image: url("https://ibb.co/FgdsCn3");
+  background-image: url("/img/epic_1b_20190627011358.png");
   
   -webkit-background-size: cover;
   -moz-background-size: cover;
@@ -19,7 +19,7 @@ body{
 }
 
 #quiz{
-  background-color: #DEDEDEDE;
+  background-color: #DEDEDE;
   padding-bottom: 130px;
   width: 450px;
   margin: 0 auto;
@@ -28,6 +28,7 @@ body{
   border-radius: 2%;
   color: #555555;
   text-align: center;
+  opacity: 0.9;
   box-shadow: 5px 5px 15px 2px rgba(0,0,0,0.39);
 }
 
