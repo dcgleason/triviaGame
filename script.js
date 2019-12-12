@@ -52,6 +52,9 @@ let topArray = [0]
 let progressBarFull = document.querySelector("#progressBarFull")
 const totalQuestions = 5
 let fraction = document.querySelector(".fraction")
+let modal = document.getElementsByClassName("modal")[0]
+let close = document.querySelector(".close")
+let html = document.getElementsByTagName("html")
 
 setScreen()
 
@@ -275,6 +278,7 @@ function sortNum (a,b){
     answerOneDiv.addEventListener("click", fifthTurnAnswer1);
     answerTwoDiv.addEventListener("click", fifthTurnAnswer2);
     answerThreeDiv.addEventListener("click", fifthTurnAnswer3);
+   
   }
   function gameOver() {
     document.getElementById("title").innerHTML = "Game Over";
@@ -284,6 +288,18 @@ function sortNum (a,b){
     answerThreeDiv.innerHTML = "";
     result.innerHTML = "";
     streak.innerHTML = "Your total score is " + total
+    console.log(progressBarFull.style.width)
+    if(progressBarFull.style.width  === "100%"){
+        modal.style.display = "block"
+     }
+     close.addEventListener("click", function(){
+        modal.style.display = "none";
+      })
+    //  html.addEventListener("click", function() {
+    //     if (event.target == modal) {
+    //       modal.style.display = "none";
+    //     }
+    //   })
 
 // remove event listeners from third turn
 
@@ -315,6 +331,8 @@ function sortNum (a,b){
     answerOneDiv.classList.add("hidden")
     answerTwoDiv.classList.add("hidden")
     answerThreeDiv.classList.add("hidden")
+   
+
     // answerOneDiv.parentNode.removeChild(answerOneDiv);
     // answerTwoDiv.parentNode.removeChild(answerTwoDiv);
     // answerThreeDiv.parentNode.removeChild(answerThreeDiv);
@@ -322,6 +340,7 @@ function sortNum (a,b){
     ;
   }
 
+ 
 
 
 
