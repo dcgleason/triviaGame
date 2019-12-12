@@ -6,7 +6,11 @@ let trivia = {
     secondQuestion: 'The planets make up what percentage of the mass in our solar system?',
     secondAnswer: ['1.35%', '0.135%' , '13.5%', 0],
     thirdQuestion: 'What are the only two planets in our solar system without moons?',
-    thirdAnswer: ['Venus & Mars', 'Mercury & Venus', 'Uranus & Neptune', 1]
+    thirdAnswer: ['Venus & Mars', 'Mercury & Venus', 'Uranus & Neptune', 1],
+    fourthQuestion: 'What manned U.S. space program eventually put 12 men on the Moon?',
+    fourthAnswer: ['Voyager', 'Apollo', 'Gemini', 1],
+    fifthQuestion: 'What color is the sunset on Mars?',
+    fifthAnswer: ["Yellow", "Blue", "Green", 1]
 };
 
 // code to pull background image of earth from nasa api
@@ -47,7 +51,7 @@ let numRightInARow = 0
 let total = 0
 let topArray = [0]
 let progressBarFull = document.querySelector("#progressBarFull")
-const totalQuestions = 3
+const totalQuestions = 5
 let fraction = document.querySelector(".fraction")
 
 setScreen()
@@ -131,7 +135,7 @@ function setScreen(){
     streak.innerHTML = "Your winning streak is " + numRightInARow;
     fraction.innerHTML = "Questions: " + total + "/" + totalQuestions
     topScore.innerHTML = "Top Score: " + topArray[0]
-    gameOver();
+    fourthTurn();
   }
   function thirdTurnAnswer2() {
     result.innerHTML = "That was correct";
@@ -144,18 +148,71 @@ function setScreen(){
     progressBarFull.style.width = `${(total/totalQuestions) * 100}%`
     topScore.innerHTML = "Top Score: " + topArray[0]
     console.log(total/totalQuestions)
-    gameOver();
+    fourthTurn();
   }
   function thirdTurnAnswer3() {
     result.innerHTML = "That was incorrect";
     numRightInARow = 0;
-    console.log(total);
     streak.innerHTML = "Your winning streak is " + numRightInARow;
     fraction.innerHTML = "Questions: " + total + "/" + totalQuestions
     topScore.innerHTML = "Top Score: " + topArray[0]
-    gameOver();
+    fourthTurn();
   }
-   
+
+  function fourthTurnAnswer1() {
+    result.innerHTML = "That was incorrect";
+    numRightInARow = 0;
+    streak.innerHTML = "Your winning streak is " + numRightInARow;
+    fraction.innerHTML = "Questions: " + total + "/" + totalQuestions
+    topScore.innerHTML = "Top Score: " + topArray[0]
+    fifthTurn();  
+  }
+  function fourthTurnAnswer2() {
+    result.innerHTML = "That was correct";
+    numRightInARow+=1
+    total ++
+    streak.innerHTML = "Your winning streak is " + numRightInARow;
+    fraction.innerHTML = "Questions: " + total + "/" + totalQuestions
+    progressBarFull.style.width = `${(total/totalQuestions) * 100}%`
+    topScore.innerHTML = "Top Score: " + topArray[0]
+    fifthTurn();  
+  } 
+  function fourthTurnAnswer3() {
+    result.innerHTML = "That was incorrect";
+    numRightInARow = 0;
+    streak.innerHTML = "Your winning streak is " + numRightInARow;
+    fraction.innerHTML = "Questions: " + total + "/" + totalQuestions
+    topScore.innerHTML = "Top Score: " + topArray[0]
+    fifthTurn();  
+  }
+
+  function fifthTurnAnswer1() {
+    result.innerHTML = "That was incorrect";
+    numRightInARow = 0;
+    streak.innerHTML = "Your winning streak is " + numRightInARow;
+    fraction.innerHTML = "Questions: " + total + "/" + totalQuestions
+    topScore.innerHTML = "Top Score: " + topArray[0]
+    gameOver();  
+  }
+  function fifthTurnAnswer2() {
+    result.innerHTML = "That was correct";
+    numRightInARow ++
+    total+=1
+    streak.innerHTML = "Your winning streak is " + numRightInARow;
+    fraction.innerHTML = "Questions: " + total + "/" + totalQuestions
+    progressBarFull.style.width = `${(total/totalQuestions) * 100}%`
+    topScore.innerHTML = "Top Score: " + topArray[0]
+    gameOver();  
+  }
+  function fifthTurnAnswer3() {
+    result.innerHTML = "That was incorrect";
+    numRightInARow = 0;
+    streak.innerHTML = "Your winning streak is " + numRightInARow;
+    fraction.innerHTML = "Questions: " + total + "/" + totalQuestions
+    topScore.innerHTML = "Top Score: " + topArray[0]
+    gameOver();  
+  }
+
 function sortNum (a,b){
     return b-a
 }
@@ -195,6 +252,31 @@ function sortNum (a,b){
     answerTwoDiv.addEventListener("click", thirdTurnAnswer2);
     answerThreeDiv.addEventListener("click", thirdTurnAnswer3);
   }
+  function fourthTurn() {
+    questionDiv.innerHTML = trivia.fourthQuestion;
+    answerOneDiv.innerHTML = trivia.fourthAnswer[0];
+    answerTwoDiv.innerHTML = trivia.fourthAnswer[1];
+    answerThreeDiv.innerHTML = trivia.fourthAnswer[2];
+    answerOneDiv.removeEventListener("click", thirdTurnAnswer1);
+    answerTwoDiv.removeEventListener("click", thirdTurnAnswer2);
+    answerThreeDiv.removeEventListener("click", thirdTurnAnswer3);
+    answerOneDiv.addEventListener("click", fourthTurnAnswer1);
+    answerTwoDiv.addEventListener("click", fourthTurnAnswer2);
+    answerThreeDiv.addEventListener("click", fourthTurnAnswer3);
+  }
+
+  function fifthTurn() {
+    questionDiv.innerHTML = trivia.fifthQuestion;
+    answerOneDiv.innerHTML = trivia.fifthAnswer[0];
+    answerTwoDiv.innerHTML = trivia.fifthAnswer[1];
+    answerThreeDiv.innerHTML = trivia.fifthAnswer[2];
+    answerOneDiv.removeEventListener("click", fourthTurnAnswer1);
+    answerTwoDiv.removeEventListener("click", fourthTurnAnswer2);
+    answerThreeDiv.removeEventListener("click", fourthTurnAnswer3);
+    answerOneDiv.addEventListener("click", fifthTurnAnswer1);
+    answerTwoDiv.addEventListener("click", fifthTurnAnswer2);
+    answerThreeDiv.addEventListener("click", fifthTurnAnswer3);
+  }
   function gameOver() {
     document.getElementById("title").innerHTML = "Game Over";
     questionDiv.innerHTML = "";
@@ -202,12 +284,13 @@ function sortNum (a,b){
     answerTwoDiv.innerHTML = "";
     answerThreeDiv.innerHTML = "";
     result.innerHTML = "";
+    streak.innerHTML = "Your total score is " + total
 
 // remove event listeners from third turn
 
-    answerOneDiv.removeEventListener("click", thirdTurnAnswer1);
-    answerTwoDiv.removeEventListener("click", thirdTurnAnswer2);
-    answerThreeDiv.removeEventListener("click", thirdTurnAnswer3)
+    answerOneDiv.removeEventListener("click", fifthTurnAnswer1);
+    answerTwoDiv.removeEventListener("click", fifthTurnAnswer2);
+    answerThreeDiv.removeEventListener("click", fifthTurnAnswer3)
     
 // pushes total into array sorts that array, largest number at indexes 0
     topArray.push(total)
@@ -237,7 +320,7 @@ function sortNum (a,b){
     // answerTwoDiv.parentNode.removeChild(answerTwoDiv);
     // answerThreeDiv.parentNode.removeChild(answerThreeDiv);
 
-    streak.innerHTML = "Your total score is " + total;
+    ;
   }
 
 
@@ -264,8 +347,9 @@ function sortNum (a,b){
 //high score, cooler css (button animation), more questionDivs, fix the winning streak and total score functionality, figure out modals, and maybe try to do more than one page?
 // progress back with number correct and shows progress visually
 // high score list
+// make more question, randomly select them. 
 
 //questions
 // why does the backgruond image turn blue only for a second? Page reloading? 
 // numberRight count insn't working
-// for loop within a fetch call...
+// for loop within a fetch call
