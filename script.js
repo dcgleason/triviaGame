@@ -54,7 +54,7 @@ const totalQuestions = 5
 let fraction = document.querySelector(".fraction")
 let modal = document.getElementsByClassName("modal")[0]
 let close = document.querySelector(".close")
-let html = document.getElementsByTagName("html")
+let body = document.getElementsByTagName("body")
 
 setScreen()
 
@@ -295,10 +295,8 @@ function sortNum (a,b){
      close.addEventListener("click", function(){
         modal.style.display = "none";
       })
-    //  html.addEventListener("click", function() {
-    //     if (event.target == modal) {
+    //  body.addEventListener("click", function() {
     //       modal.style.display = "none";
-    //     }
     //   })
 
 // remove event listeners from third turn
@@ -370,8 +368,11 @@ function sortNum (a,b){
 // event listener for each button (set key = to numbers and then randomly select number )
 // if top score == 5, then modal pops up saying "You got all the questions right!"
 
+
 //questions
 // why does the backgruond image turn blue only for a second? Page reloading? 
 // numberRight count insn't working
 // for loop within a fetch call
 // does the project have to be responsive? where does it say we need a readme? 
+
+// TO DO --> readMe + figure out background image glitch
