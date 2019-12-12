@@ -16,25 +16,24 @@ let trivia = {
 // code to pull background image of earth from nasa api
 //
 
-const API_KEY = ""
+const API_KEY = "0ZdLYxQmH4TXCJDjeyOaOTIEkheeEaLdSGDaRxjs"
 const nasaURL = "https://api.nasa.gov/EPIC/api/natural/images?api_key="
 
-// function backgroundImage(){
-//  let jpeg = ".jpg"
-//  let randomNum = Math.floor(Math.random()*12);
+function backgroundImage(){
+ let randomNum = Math.floor(Math.random()*12);
  
-// fetch(nasaURL+API_KEY)
-//  .then(response => response.json())
-//  .then(data => 
-//     // console.log(data)
-//     //nasaData = data
-//     // backgraoundImagereset(nasaData)
-//     // let year = data[randomNum].date.split(" ")[0].split("-")[0]
-//     // let month = data[randomNum].date.split(" ")[0].split("-")[1]
-//     // let day = data[randomNum].date.split(" ")[0].split("-")[2]
-//     document.body.style.backgroundImage = `url('https://epic.gsfc.nasa.gov/archive/natural/${data[randomNum].date.split(" ")[0].split("-")[0]}/${data[randomNum].date.split(" ")[0].split("-")[1]}/${data[randomNum].date.split(" ")[0].split("-")[2]}/png/${data[0].image}.png?api_key=${API_KEY}')`
-//     )}
-//     backgroundImage()
+fetch(nasaURL+API_KEY)
+ .then(response => response.json())
+ .then(data => 
+    // console.log(data)
+    //nasaData = data
+    // backgraoundImagereset(nasaData)
+    // let year = data[randomNum].date.split(" ")[0].split("-")[0]
+    // let month = data[randomNum].date.split(" ")[0].split("-")[1]
+    // let day = data[randomNum].date.split(" ")[0].split("-")[2]
+    document.body.style.backgroundImage = `url('https://epic.gsfc.nasa.gov/archive/natural/${data[randomNum].date.split(" ")[0].split("-")[0]}/${data[randomNum].date.split(" ")[0].split("-")[1]}/${data[randomNum].date.split(" ")[0].split("-")[2]}/png/${data[0].image}.png?api_key=${API_KEY}')`
+    )}
+    backgroundImage()
     
 
 // display question and answers to page
@@ -356,3 +355,4 @@ function sortNum (a,b){
 // why does the backgruond image turn blue only for a second? Page reloading? 
 // numberRight count insn't working
 // for loop within a fetch call
+// does the project have to be responsive? where does it say we need a readme? 
