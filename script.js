@@ -347,7 +347,10 @@ function sortNum (a,b){
 //high score, cooler css (button animation), more questionDivs, fix the winning streak and total score functionality, figure out modals, and maybe try to do more than one page?
 // progress back with number correct and shows progress visually
 // high score list
-// make more question, randomly select them. 
+// make more question, randomly select them.
+// make the questions pop up randomly
+// event listener for each button (set key = to numbers and then randomly select number )
+// if top score == 5, then modal pops up saying "You got all the questions right!"
 
 //questions
 // why does the backgruond image turn blue only for a second? Page reloading? 
