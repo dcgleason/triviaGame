@@ -41,3 +41,7 @@ Below is the link to the NASA API documentation. The API was used to provide the
 **Instructions for Use**
 
 Start by clicking on the answer choices! Keep answering the questions until the Play Again button apears. Play until you get all 5 questions answered correctly!
+
+**Future Plans**
+
+Given more time, I would like to add a question timer, add more than 5 questions, and include question numbers. I would also like the game to be able to randomly display questions and have pop ups that display the user's results after every turn, not just when they answer all the questions correctly. 
