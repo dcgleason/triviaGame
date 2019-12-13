@@ -2,7 +2,7 @@
 
 let trivia = {
     firstQuestion: 'What is the largest planet in our solar system?',
-    firstAnswer: ['Saturn', 'Jupitor', 'Neptune', 1],
+    firstAnswer: ['Saturn', 'Jupiter', 'Neptune', 1],
     secondQuestion: 'The planets make up what percentage of the mass in our solar system?',
     secondAnswer: ['1.35%', '0.135%' , '13.5%', 0],
     thirdQuestion: 'What are the only two planets in our solar system without moons?',
