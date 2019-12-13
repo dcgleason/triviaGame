@@ -40,6 +40,10 @@ Below is the link to the NASA API documentation. The API was used to provide the
 
 **Instructions for Use**
 
+Navigate to the link below:
+
+> https://dcgleason.github.io/triviaGame/
+
 Start by clicking on the answer choices! Keep answering the questions until the Play Again button apears. Play until you get all 5 questions answered correctly!
 
 **Future Plans**
