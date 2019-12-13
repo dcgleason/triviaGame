@@ -162,4 +162,133 @@ button{
   text-decoration: none;
   cursor: pointer;
 }
-/* make responsive
+
+
+@media only screen and (max-width : 365px){
+  
+
+
+  body{
+    background-color: inherit;
+    background-image: url("https://i.ibb.co/LnsQHvR/epic-1b-20190627011358.png");
+    
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    background-color: none;
+  }
+  
+  .wrapper{
+    display: flex;
+  }
+  
+  #quiz{
+    background-color: #DEDEDE;
+    padding-bottom: 130px;
+    width: 450px;
+    margin: 0 auto;
+    height: 100%;
+    padding-top: 0px;
+    border-radius: 2%;
+    color: #555555;
+    text-align: center;
+    opacity: 0.9;
+    box-shadow: 5px 5px 15px 2px rgba(0,0,0,0.39);
+  }
+  
+  .bottomHalfWrapper{
+    height: 200px;
+    line-height: 150px;
+    text-align: center;
+    padding: 0px;
+    /* border: 2px dashed #f69c55; */
+  }
+  .answers, .results {
+    display: inline-block;
+    vertical-align: middle;
+    line-height: normal;
+    /* border: 2px dashed #f69c55; */
+  
+  }
+  
+  .answers{
+    padding: 0;
+    margin: 0;
+  }
+  
+  #progressBar{
+    width: 20rem;
+    height: 4rem;
+    border: 0.3rem solid #AA3939;
+    margin: 10px;
+  }
+  
+  #progressBarFull{
+    height: 3.4rem;
+    background-color: #AA3939;
+    width: 100%;
+  
+  }
+  
+  #quiz > h1 {
+      text-align: center;
+      padding-top: 20px;
+      padding-bottom: 10px;
+      font-size: 25px;
+      /* border: 2px dashed #f69c55; */
+  
+    }
+  
+  .question {
+      font-size: 15px;
+      font-weight: 680;
+      font-style: italic;
+      border-top: 1px solid #FFFFFF;
+      border-bottom: 1px solid #FFFFFF;
+      padding: 15px;
+    }
+  
+  .answers div {
+      padding: 10px 0 0 0;
+      font-size: 16px;
+      
+    }
+  
+  button{
+    background-color: #AA3939; 
+    color: white;
+    padding: 10px 25px;
+    text-decoration: none;
+    font-size: 14px;
+    justify-content: center;
+    display: block;
+    
+  }
+  
+  .red{
+  
+      font-weight: 700;
+      color: white;
+      border-color: white;
+      background: #AA3939;
+  }
+  .red:hover {
+      color: #AA3939;
+      background: white;
+      border-color: white;
+  
+  
+  }
+  
+  .hidden{
+    visibility: hidden;
+  }
+  
+  
+  .answers button:hover {
+      cursor: pointer;
+    }
+  
+}
+
