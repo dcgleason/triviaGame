@@ -6,7 +6,7 @@ This trivia game is a game to test your general knowledge about astronomy. Grant
 
 **Motivation**
 
-While there are many trivia games out there on the interent, none, so far as I could tell, exsist that are specificially in the realm of space / atronomy. Being a fan of the topic, I felt that it would be at least good to create an astronomy trivia game so that it exists and so that other astronomy-fans can enjoy it.
+While there are many trivia games out there on the internet, none, so far as I could tell, exsist that are specificially in the realm of space / atronomy. Being a fan of the topic, I felt that it would be at least good to create an astronomy trivia game so that it exists and so that other astronomy-fans can enjoy it.
 
 **Technologies Used**
 
